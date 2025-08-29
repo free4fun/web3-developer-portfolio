@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Doe | Web3 Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cyber-bg': '#0D0F18',
+              'cyber-surface': '#151823',
+              'cyber-primary': '#00F5FF', // Neon Cyan
+              'cyber-secondary': '#FF00E5', // Neon Magenta
+              'cyber-accent': '#7FFF00', // Neon Lime
+              'cyber-text-primary': '#EAEAEA',
+              'cyber-text-secondary': '#A0A0A0',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['Roboto Mono', 'ui-monospace', 'monospace'],
+            },
+            animation: {
+              'text-glow': 'text-glow 1.5s ease-in-out infinite alternate',
+              'border-pulse': 'border-pulse 2s infinite',
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'slide-in': 'slide-in 0.5s ease-out forwards',
+              'chat-pulse': 'chat-pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1)',
+              'glitch': 'glitch 0.5s linear infinite',
+              'decode-char': 'decode-char 0.8s ease-out forwards',
+              'blink': 'blink 1s step-end infinite',
+              'subtle-glitch': 'subtle-glitch 8s step-end infinite',
+            },
+            keyframes: {
+              'text-glow': {
+                '0%': { textShadow: '0 0 5px rgba(0, 245, 255, 0.5), 0 0 10px rgba(0, 245, 255, 0.5)' },
+                '100%': { textShadow: '0 0 10px rgba(0, 245, 255, 1), 0 0 20px rgba(0, 245, 255, 1)' },
+              },
+              'border-pulse': {
+                '0%': { borderColor: 'rgba(0, 245, 255, 0.3)' },
+                '50%': { borderColor: 'rgba(0, 245, 255, 0.8)' },
+                '100%': { borderColor: 'rgba(0, 245, 255, 0.3)' },
+              },
+              'fade-in': {
+                'from': { opacity: 0 },
+                'to': { opacity: 1 },
+              },
+              'slide-in': {
+                'from': { transform: 'translateY(20px)', opacity: 0 },
+                'to': { transform: 'translateY(0)', opacity: 1 },
+              },
+              'chat-pulse': {
+                '0%, 100%': {
+                  transform: 'scale(1)',
+                  boxShadow: '0 0 0 0 rgba(255, 0, 229, 0.7)',
+                },
+                '50%': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0 0 10px 15px rgba(255, 0, 229, 0)',
+                },
+              },
+              'glitch': {
+                '2%, 64%': { transform: 'translate(2px, 0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px, 0) skew(0deg)' },
+                '62%': { transform: 'translate(0, 0) skew(5deg)' }
+              },
+              'decode-char': {
+                'from': { opacity: 0, transform: 'translateY(20px)' },
+                'to': { opacity: 1, transform: 'translateY(0)' }
+              },
+              'blink': {
+                'from, to': { opacity: '1' },
+                '50%': { opacity: '0' },
+              },
+              'subtle-glitch': {
+                '0%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '10.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '10.1%': { transform: 'translate(1px, -1px)', clipPath: 'polygon(0 25%, 100% 25%, 100% 26%, 0 26%)' },
+                '10.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '40.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '40.1%': { transform: 'translate(-1px, 1px)', clipPath: 'polygon(0 60%, 100% 60%, 100% 61%, 0 61%)' },
+                '40.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '100%': { transform: 'translate(0, 0)', clipPath: 'none' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body, button, a {
+        cursor: none !important;
+      }
+      .glitch-container:hover .glitch {
+        animation: glitch 0.3s linear infinite;
+      }
+      .glitch {
+        position: relative;
+        display: inline-block;
+      }
+      .glitch-container:hover .glitch::before,
+      .glitch-container:hover .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0D0F18;
+        overflow: hidden;
+      }
+      .glitch-container:hover .glitch::before {
+        left: 2px;
+        text-shadow: -2px 0 #FF00E5;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        animation: glitch 2s infinite linear reverse;
+      }
+      .glitch-container:hover .glitch::after {
+        left: -2px;
+        text-shadow: -2px 0 #00F5FF, 2px 2px #FF00E5;
+        clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        animation: glitch 2.5s infinite linear reverse;
+      }
+      .decode-char {
+        opacity: 0;
+        animation: decode-char 0.8s ease-out forwards;
+        display: inline-block;
+      }
+      .typing-cursor::after {
+        content: '_';
+        color: #00F5FF; /* neon cyan */
+        animation: blink 1s step-end infinite;
+      }
+      .glitch-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: transparent;
+        animation: subtle-glitch 8s step-end infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react-icons/": "https://esm.sh/react-icons@5.2.1/",
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-cyber-bg">
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
