@@ -21,10 +21,10 @@ const App: React.FC = () => {
       <div className="relative z-10">
         <main>
           <About />
+          <Philosophy />
           <Mission />
           <Skills />
           <Projects />
-          <Philosophy />
         </main>
       </div>
       <Contact />

@@ -10,7 +10,7 @@ export const Philosophy = () => {
     <Section id="philosophy">
       <SectionTitle title="Code & Creed" />
       <p className="text-center max-w-3xl mx-auto text-cyber-text-secondary mb-16">
-        My approach to development is guided by a set of core principles that ensure every project is not just functional, but also resilient, user-friendly, and future-proof.
+        My approach to development is forged in a landscape of noise and code. Every project must be resilient, intuitive, and aligned with the decentralized future.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {PHILOSOPHY_DATA.map((item, index) => (

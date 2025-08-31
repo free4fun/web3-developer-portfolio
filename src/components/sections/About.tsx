@@ -19,15 +19,30 @@ export const About = () => {
           </Card>
         </div>
         <div className="md:col-span-3 text-cyber-text-secondary text-lg space-y-4">
-          <p>
-            Hello! I'm Alex, a fullstack developer with a deep-seated passion for blockchain technology and the decentralized web. My journey into Web3 was driven by a desire to build more transparent, secure, and user-empowering digital experiences.
-          </p>
-          <p>
-            With a background in both frontend artistry and backend architecture, I bridge the gap between complex blockchain logic and intuitive, engaging user interfaces. I thrive on challenges, from designing intricate smart contract systems to optimizing dApp performance.
-          </p>
-          <p>
-            When I'm not coding, you can find me exploring the latest developments in the crypto space, contributing to open-source projects, or diving into cyberpunk fiction for inspiration.
-          </p>
+<p>
+          gm.
+I’m free4fun.
+Fullstack developer.
+White belt in the arts of blockchain.</p>
+<p>
+Driven by an obsession with decentralized technology.
+Born almost by accident in a horizon full of digital noise.
+Once I saw the magnitude of this crypto-philosophical engine.
+I moved forward without pause in its direction.</p>
+<p>
+I design digital experiences that are transparent and secure.
+Control returns to the hands of the user.
+With the mix of frontend and backend in my arsenal.
+I translate encrypted chain logic into clear interfaces.
+I enjoy deciphering challenges.
+From smart contract architectures.
+To squeezing every drop of performance out of a dApp.</p>
+<p>
+When I leave the keyboard, I stay connected.
+Tracking mutations of the crypto ecosystem.
+Contributing to open-source projects.
+Finding inspiration in the cyberpunk vision.
+Always focused on building the decentralized future.</p>
         </div>
       </div>
     </Section>

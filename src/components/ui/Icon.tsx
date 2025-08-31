@@ -15,21 +15,21 @@ const ICONS: Record<string, string> = {
 
   // Backend
   nodejs: 'simple-icons:nodedotjs',
-  express: 'simple-icons:express',
-  graphql: 'simple-icons:graphql',
+  typeorm: 'simple-icons:typeorm',
+  ipfs: 'simple-icons:ipfs',
   postgres: 'simple-icons:postgresql',
 
   // Web3 & Blockchain
   solidity: 'simple-icons:solidity',
-  hardhat: 'simple-icons:hardhat',     // fallback posible: 'logos:hardhat-icon'
+  hardhat: 'devicon-plain:hardhat',     // fallback posible: 'logos:hardhat-icon'
   ethers: 'simple-icons:ethers',       // fallback posible: 'logos:ethers'
-  graph: 'simple-icons:thegraph',
+  graphql: 'file-icons:graphql',
 
   // Tools & DevOps
+  linux: 'simple-icons:linux',
   docker: 'simple-icons:docker',
   git: 'simple-icons:git',
-  vercel: 'simple-icons:vercel',
-  figma: 'simple-icons:figma',
+  prometheus: 'simple-icons:prometheus',
 
   // Social
   github: 'simple-icons:github',
@@ -37,12 +37,12 @@ const ICONS: Record<string, string> = {
   twitter: 'simple-icons:x', // o 'simple-icons:twitter' si prefieres el pajarito
 
   // UI / Miscelánea (no-brand)
-  target: 'lucide:target',
-  eye: 'lucide:eye',
-  gem: 'lucide:gem',
-  users: 'lucide:users',
-  shield: 'lucide:shield',
-  brain: 'lucide:brain',
+  target: 'lucide:crosshair',
+  eye: 'mdi:eye-outline',
+  users: 'mdi:users-outline',
+  shield: 'mdi:account-lock-outline',
+  heart: 'mdi:heart-outline',
+  check: 'mdi:account-check-outline',
 };
 
 

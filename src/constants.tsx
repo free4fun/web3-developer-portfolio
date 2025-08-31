@@ -9,71 +9,65 @@ export const SKILLS_DATA: { [key: string]: Skill[] } = {
     { name: 'Next.js', icon: <Icon name="nextjs" /> },
     { name: 'Tailwind CSS', icon: <Icon name="tailwind" /> },
   ],
-  'Backend': [
-    { name: 'Node.js', icon: <Icon name="nodejs" /> },
-    { name: 'Express', icon: <Icon name="express" /> },
-    { name: 'GraphQL', icon: <Icon name="graphql" /> },
-    { name: 'PostgreSQL', icon: <Icon name="postgres" /> },
+'Backend': [
+  { name: 'Node.js', icon: <Icon name="nodejs" /> },
+  { name: 'TypeORM', icon: <Icon name="typeorm" /> },
+  { name: 'PostgreSQL', icon: <Icon name="postgres" /> },
+  { name: 'IPFS', icon: <Icon name="ipfs" /> },
   ],
   'Web3 & Blockchain': [
     { name: 'Solidity', icon: <Icon name="solidity" /> },
     { name: 'Hardhat', icon: <Icon name="hardhat" /> },
     { name: 'Ethers.js', icon: <Icon name="ethers" /> },
-    { name: 'The Graph', icon: <Icon name="graph" /> },
+    { name: 'GraphQL', icon: <Icon name="graphql" /> },
   ],
   'Tools & DevOps': [
+    { name: 'Linux', icon: <Icon name="linux" /> },
     { name: 'Docker', icon: <Icon name="docker" /> },
     { name: 'Git', icon: <Icon name="git" /> },
-    { name: 'Vercel', icon: <Icon name="vercel" /> },
-    { name: 'Figma', icon: <Icon name="figma" /> },
+    { name: 'Prometheus', icon: <Icon name="prometheus" /> },
   ],
 };
 
 export const MISSION_VISION_VALUES_DATA: CoreValueItem[] = [
-  {
-    title: 'Mission',
-        description:
-      'To engineer a decentralized digital world that is more open, transparent, and equitable, empowering ' +
-      'individuals with true ownership of their assets and data.',
-    icon: <Icon name="target" />,
-  },
-  {
-    title: 'Vision',
-        description:
-      'I envision a future where blockchain is seamlessly integrated into our daily digital interactions, creating a ' +
-      'secure and user-centric web that fosters trust and innovation.',
-    icon: <Icon name="eye" />
-  },
-  {
-    title: 'Values',
-    description:
-      'Integrity, robust security, and continuous innovation are the pillars of my work. I build solutions that are ' +
-      'not only powerful but also reliable and user-friendly.',
-    icon: <Icon name="gem" />
-  }
+{
+  title: 'Mission',
+  description:
+    'Engineer a decentralized digital world — open, transparent, and equitable — where individuals reclaim true ownership of assets and data.',
+  icon: <Icon name="target" />,
+},
+{
+  title: 'Vision',
+  description:
+    'A future where blockchain runs through daily interactions, shaping a secure, verifiable, and user-driven web that fuels constant innovation.',
+  icon: <Icon name="eye" />
+},
+{
+  title: 'Values',
+  description:
+    'Integrity as code. Security as armor. Innovation as survival. Solutions forged to endure, built for clarity and power in a decentralized age.',
+  icon: <Icon name="heart" />,
+}
 ];
 
 export const PHILOSOPHY_DATA: PhilosophyItem[] = [
   {
     title: 'Decentralization First',
      description:
-      'I prioritize building systems that are censorship-resistant and distribute control, empowering users and ' +
-      'removing single points of failure.',
+      'I build systems where power is distributed, resistance is intrinsic, and no single point can silence the network.',
     icon: <Icon name="users" />
   },
   {
     title: 'User-Centric Security',
     description:
-      'Security is not an afterthought. I design with a security-first mindset, ensuring user assets and data are ' +
-      'protected through robust, audited code.',
+      'Security is written into every line of code. User assets and data remain protected through hardened, verifiable logic.',
     icon: <Icon name="shield" />
   },
   {
     title: 'Pragmatic Innovation',
     description:
-      "While I'm passionate about cutting-edge tech, I choose the right tools for the job, balancing innovation with " +
-      "practicality to deliver real-world value.",
-    icon: <Icon name="brain" />
+      "I explore the edge of technology, but I wield tools with precision. Innovation is nothing without practicality and impact in the real world.",
+    icon: <Icon name="check" />
   }
 ];
 
