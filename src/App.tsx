@@ -1,4 +1,3 @@
-import  React from 'react';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { CyberpunkBackground } from './components/layout/CyberpunkBackground';
@@ -12,6 +11,7 @@ import { Contact } from './components/sections/Contact';
 import { CustomCursor } from './components/ui/CustomCursor';
 
 const App: React.FC = () => {
+
   return (
     <div className="text-cyber-text-primary font-sans">
       <CustomCursor />

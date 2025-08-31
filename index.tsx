@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './src/App';
+import "./src/styles/global.css";
+
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -14,3 +16,8 @@ root.render(
     <App/>
   </React.StrictMode>
 );
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) loader.classList.add("hide");
+});
