@@ -4,11 +4,10 @@ import { CoreValueItem } from '../../types'; // Can be used for PhilosophyItem t
 
 interface InfoCardProps {
     item: CoreValueItem; // This type is compatible with PhilosophyItem due to structural typing
-    key: number;
     animationDelay: string;
 }
 
-export const InfoCard = ({ item, key, animationDelay } : InfoCardProps) => {
+export const InfoCard = ({ item, animationDelay } : InfoCardProps) => {
   return (
     <Card
       key={item.title}

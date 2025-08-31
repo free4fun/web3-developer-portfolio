@@ -1,4 +1,3 @@
-import React from "react";
 import { HexHoneycomb } from "../ui/HexHoneycomb";
 
 const halos = {

@@ -5,12 +5,11 @@ import { Icon } from './Icon';
 
 interface ProjectCardProps {
   project: Project;
-  key: number;
 }
 
-export const ProjectCard = ({ project, key } : ProjectCardProps) => {
+export const ProjectCard = ({ project } : ProjectCardProps) => {
   return (
-    <Card key={key+''} className="flex flex-col animate-slide-in p-0 overflow-hidden">
+    <Card className="flex flex-col animate-slide-in p-0 overflow-hidden">
       <div className="relative overflow-hidden group">
         <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-cyber-primary/30 transition-opacity duration-500 group-hover:opacity-0"></div>

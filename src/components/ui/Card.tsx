@@ -2,11 +2,11 @@ import React, { ReactNode, useState } from 'react';
 
 interface CardProps {
   children: ReactNode;
-  key: string;
   className?: string;
   style?: React.CSSProperties;
 }
-export const Card = ({ children, key, className = '', style: propStyle }: CardProps) => {
+export const Card = ({ children, className = '', style: propStyle }: CardProps) => {
+
 
   const [hoverStyle, setHoverStyle] = useState<React.CSSProperties>({});
 
