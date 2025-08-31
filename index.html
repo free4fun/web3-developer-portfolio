@@ -93,73 +93,8 @@
         }
       }
     </script>
-    <style>
-      body, button, a {
-        cursor: none !important;
-      }
-      .glitch-container:hover .glitch {
-        animation: glitch 0.3s linear infinite;
-      }
-      .glitch {
-        position: relative;
-        display: inline-block;
-      }
-      .glitch-container:hover .glitch::before,
-      .glitch-container:hover .glitch::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #0D0F18;
-        overflow: hidden;
-      }
-      .glitch-container:hover .glitch::before {
-        left: 2px;
-        text-shadow: -2px 0 #FF00E5;
-        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-        animation: glitch 2s infinite linear reverse;
-      }
-      .glitch-container:hover .glitch::after {
-        left: -2px;
-        text-shadow: -2px 0 #00F5FF, 2px 2px #FF00E5;
-        clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-        animation: glitch 2.5s infinite linear reverse;
-      }
-      .decode-char {
-        opacity: 0;
-        animation: decode-char 0.8s ease-out forwards;
-        display: inline-block;
-      }
-      .typing-cursor::after {
-        content: '_';
-        color: #00F5FF; /* neon cyan */
-        animation: blink 1s step-end infinite;
-      }
-      .glitch-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        background: transparent;
-        animation: subtle-glitch 8s step-end infinite;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.1.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
-    "react/": "https://esm.sh/react@^19.1.1/",
-    "react-icons/": "https://esm.sh/react-icons@5.2.1/",
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <link rel="stylesheet" href="/src/styles/global.css">
+  </head>
   <body class="bg-cyber-bg">
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>

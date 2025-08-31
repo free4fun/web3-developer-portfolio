@@ -1,166 +1,80 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React from "react";
+import { HexHoneycomb } from "../ui/HexHoneycomb";
 
-// --- Configuration ---
-const RAIN_CHARACTERS =
-  'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const halos = {
+  backgroundImage: `
+    radial-gradient(1200px 800px at 10% -10%, rgba(0,245,255,0.10), transparent 55%),
+    radial-gradient(900px 700px at 90% 110%, rgba(255,0,170,0.10), transparent 60%),
+    radial-gradient(600px 600px at 70% 20%, rgba(120,0,255,0.10), transparent 65%),
+    radial-gradient(1200px 1200px at 50% 50%, #0b0f17 0%, #0b0f17 40%, #0a0d14 100%)
+  `,
+  backgroundBlendMode: "screen, screen, screen, normal",
+};
 
-const FONT_SIZE = 16;
-const RAIN_SPEED_MIN = 1;
-const RAIN_SPEED_MAX = 4;
-const STREAM_LENGTH_MIN = 10;
-const STREAM_LENGTH_MAX = 40;
-
-const CHAR_POOL = Array.from(RAIN_CHARACTERS);
-const pickChar = () => CHAR_POOL[Math.floor(Math.random() * CHAR_POOL.length)];
-
-class Glyph {
-  character: string;
-  x: number;
-  y: number;
-  fontSize: number;
-  isFirst: boolean;
-
-  constructor(x: number, y: number, fontSize: number, isFirst: boolean) {
-    this.x = x;
-    this.y = y;
-    this.fontSize = fontSize;
-    this.isFirst = isFirst;
-    this.character = pickChar();
-  }
-
-  draw(ctx: CanvasRenderingContext2D) {
-    if (this.isFirst) {
-      ctx.fillStyle = '#b3f5ff'; // leader
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = '#00F5FF';
-    } else {
-      ctx.fillStyle = `rgba(0, 245, 255, ${Math.random() * 0.5 + 0.2})`;
-      ctx.shadowBlur = 0;
-    }
-    ctx.fillText(this.character, this.x, this.y);
-  }
-}
-
-class Stream {
-  symbols: Glyph[] = [];
-  totalSymbols: number;
-  speed: number;
-  x: number;
-  y: number;
-  fontSize: number;
-  canvasHeight: number;
-
-  constructor(x: number, canvasHeight: number, fontSize: number) {
-    this.x = x;
-    this.y = Math.random() * canvasHeight * 2 - canvasHeight;
-    this.canvasHeight = canvasHeight;
-    this.fontSize = fontSize;
-    this.totalSymbols =
-      Math.floor(Math.random() * (STREAM_LENGTH_MAX - STREAM_LENGTH_MIN)) +
-      STREAM_LENGTH_MIN;
-    this.speed =
-      Math.random() * (RAIN_SPEED_MAX - RAIN_SPEED_MIN) + RAIN_SPEED_MIN;
-    this.generateSymbols();
-  }
-
-  private generateSymbols() {
-    this.symbols = [];
-    for (let i = 0; i < this.totalSymbols; i++) {
-      const isFirst = i === 0;
-      this.symbols.push(
-        new Glyph(this.x, this.y - i * this.fontSize, this.fontSize, isFirst),
-      );
-    }
-  }
-
-  render(ctx: CanvasRenderingContext2D) {
-    this.symbols.forEach((symbol) => {
-      if (Math.random() > 0.99) symbol.character = pickChar();
-      symbol.draw(ctx);
-    });
-    this.update();
-  }
-
-  private update() {
-    this.y += this.speed;
-    if (this.y - this.totalSymbols * this.fontSize > this.canvasHeight) {
-      this.y = Math.random() * -this.canvasHeight * 0.5; // Reset to top
-    }
-    for (let i = 0; i < this.totalSymbols; i++) {
-      this.symbols[i].y = this.y - i * this.fontSize;
-    }
-  }
-}
-
-export const CyberpunkBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef = useRef<number | null>(null);
-
-  const setupStreams = useCallback((width: number, height: number): Stream[] => {
-    const streams: Stream[] = [];
-    const columns = Math.floor(width / FONT_SIZE);
-    for (let i = 0; i < columns; i++) {
-      if (Math.random() > 0.5) { // Randomly create streams to vary density
-        streams.push(new Stream(i * FONT_SIZE, height, FONT_SIZE));
-      }
-    }
-    return streams;
-  }, []);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let streams: Stream[] = [];
-
-    const resize = () => {
-      const dpr = Math.max(1, Math.floor(window.devicePixelRatio || 1));
-      const cssWidth = window.innerWidth;
-      const cssHeight = window.innerHeight;
-
-      canvas.style.width = `${cssWidth}px`;
-      canvas.style.height = `${cssHeight}px`;
-      canvas.width = cssWidth * dpr;
-      canvas.height = cssHeight * dpr;
-      
-      ctx.scale(dpr, dpr);
-
-      ctx.font = `${FONT_SIZE}px "Roboto Mono", ui-monospace, monospace`;
-      ctx.textBaseline = 'top';
-
-      streams = setupStreams(cssWidth, cssHeight);
-    };
-
-    let resizeTimer: number | null = null;
-    const handleResize = () => {
-      if (resizeTimer) window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(resize, 100);
-    };
-
-    resize();
-    window.addEventListener('resize', handleResize);
-
-    const animate = () => {
-      ctx.fillStyle = 'rgba(13, 15, 24, 0.15)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      streams.forEach((stream) => stream.render(ctx));
-      rafRef.current = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [setupStreams]);
-
+type NodeProps = { x: string; y: string; delay?: number; hue?: number; size?: number };
+const NeonNode = ({ x, y, delay = 0, hue = 200, size = 40 }: NodeProps) => {
+  const glow = `radial-gradient(circle at center,
+    hsla(${hue} 100% 60% / .85) 0%,
+    hsla(${hue} 100% 60% / .35) 18%,
+    hsla(${hue} 100% 60% / .10) 35%,
+    transparent 55%)`;
   return (
-    <div className="fixed inset-0 -z-10">
-      <canvas ref={canvasRef} />
-      <div className="glitch-overlay" />
-    </div>
+    <div
+      className="absolute pointer-events-none will-change-transform"
+      style={{
+        left: x, top: y, width: size, height: size,
+        translate: "-50% -50%", backgroundImage: glow,
+        filter: "blur(0.5px)", animation: `ease-in-out ${delay}s nodePulse 0s infinite`,
+      }}
+    />
   );
 };
+
+export const CyberpunkBackground = () => (
+  <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden>
+    {/* Halos con parallax leve */}
+<div
+  className="pointer-events-none will-change-transform"
+  style={{
+    position: "fixed",
+    inset: -220,
+    ...halos,
+    animation: "halosDrift 30s linear infinite",
+  }}
+/>
+
+    {/* Panal */}
+    <HexHoneycomb />
+
+    {/* Scanlines */}
+    <div
+      className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+      style={{
+        backgroundImage:
+          "linear-gradient(to bottom, rgba(255,255,255,0.04) 0 1px, transparent 1px 3px)",
+        backgroundSize: "100% 3px",
+        animation: "flicker 7s ease-in-out infinite",
+      }}
+    />
+
+    {/* Vignette */}
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        background:
+          "radial-gradient(80% 80% at 50% 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%)",
+      }}
+    />
+
+    {/* Neon nodes */}
+<NeonNode x="5%" y="18%" size={70} hue={190} delay={7.0} />
+<NeonNode x="75%" y="22%" size={55} hue={310} delay={9.8} />
+<NeonNode x="42%" y="40%" size={65} hue={260} delay={3.5} />
+<NeonNode x="55%" y="58%" size={80} hue={200} delay={4.2} />
+<NeonNode x="15%" y="72%" size={60} hue={330} delay={3.0} />
+<NeonNode x="68%" y="78%" size={85} hue={210} delay={4.8} />
+<NeonNode x="50%" y="88%" size={72} hue={280} delay={5.6} />
+<NeonNode x="91%" y="88%" size={85} hue={310} delay={4.1} />
+<NeonNode x="96%" y="28%" size={92} hue={280} delay={7.9} />
+  </div>
+);

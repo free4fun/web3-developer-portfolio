@@ -15,19 +15,19 @@ const App: React.FC = () => {
   return (
     <div className="text-cyber-text-primary font-sans">
       <CustomCursor />
-      <CyberpunkBackground />
+      <CyberpunkBackground/>
       <Header />
-      <main>
-        <Hero />
-        <div className="relative z-10">
+      <Hero />
+      <div className="relative z-10">
+        <main>
           <About />
           <Mission />
           <Skills />
           <Projects />
           <Philosophy />
-          <Contact />
-        </div>
-      </main>
+        </main>
+      </div>
+      <Contact />
       <Footer />
     </div>
   );
