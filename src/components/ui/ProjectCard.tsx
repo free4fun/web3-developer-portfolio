@@ -16,7 +16,7 @@ export const ProjectCard = ({ project } : ProjectCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-cyber-surface to-transparent"></div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-cyber-text-primary mb-2">{project.title}</h3>
+        <h3 className="text-2xl font-bold text-cyber-primary mb-2">{project.title}</h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
             <span key={tag} className="text-xs font-mono bg-cyber-primary/20 text-cyber-primary px-2 py-1 rounded">
@@ -24,18 +24,19 @@ export const ProjectCard = ({ project } : ProjectCardProps) => {
             </span>
           ))}
         </div>
-        <p className="text-cyber-text-secondary flex-grow mb-6">{project.description}</p>
+        <p className="flex-grow mb-6">{project.description}</p>
         <div className="mt-auto flex items-center space-x-4">
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyber-accent hover:underline flex items-center gap-2">
-              Live Demo
-            </a>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyber-secondary hover:underline flex items-center gap-2">Live Demo</a>
           )}
+          {!project.liveUrl && <span className="text-cyber-primary">Coming Soon</span>}
+
           {typeof project.repoUrl === 'string' && project.repoUrl.trim() !== '' && (
-            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" className="text-cyber-text-secondary hover:text-cyber-primary transition-colors duration-300">
+            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" className="text-cyber-primary hover:text-cyber-secondary transition-colors duration-300">
               <Icon name="github" className="h-6 w-6" />
             </a>
           )}
+          
         </div>
       </div>
     </Card>

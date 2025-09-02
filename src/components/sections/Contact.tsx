@@ -9,8 +9,8 @@ export const Contact = () => {
     <Section id="contact" className="bg-cyber-surface/50">
       <div className="text-center">
         <SectionTitle title="Connect" />
-        <p className="text-cyber-text-secondary mb-8 max-w-2xl mx-auto">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.
+        <p className="mb-8 max-w-2xl mx-auto">
+          Open to new projects, bold ideas, and opportunities to build ambitious visions. Let’s connect.
         </p>
         <div className="flex justify-center items-center space-x-8">
           {SOCIAL_LINKS.map((link) => (
@@ -27,7 +27,7 @@ export const Contact = () => {
           ))}
         </div>
         <div className="mt-12 font-mono text-cyber-secondary">
-          <a href="mailto:contact@alexdoe.dev" className="hover:underline">contact@alexdoe.dev</a>
+          <a href="mailto:gm@free4fun.dev" className="hover:underline">gm@free4fun.dev</a>
         </div>
       </div>
     </Section>

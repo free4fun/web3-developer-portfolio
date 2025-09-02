@@ -14,11 +14,11 @@ export const InfoCard = ({ item, animationDelay } : InfoCardProps) => {
       className="text-center flex flex-col items-center animate-slide-in"
       style={{ animationDelay }}
     >
-      <div className="p-4 bg-cyber-primary/10 rounded-full mb-4 text-cyber-accent">
+      <div className="p-4 bg-cyber-primary/10 rounded-full mb-4 text-cyber-secondary">
         {React.cloneElement(item.icon, { className: "h-10 w-10" })}
       </div>
-      <h3 className="text-xl font-bold text-cyber-text-primary mb-2">{item.title}</h3>
-      <p className="text-cyber-text-secondary flex-grow">{item.description}</p>
+      <h3 className="text-xl font-bold text-cyber-primary mb-2">{item.title}</h3>
+      <p className="flex-grow">{item.description}</p>
     </Card>
   );
 };

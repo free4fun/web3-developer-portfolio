@@ -18,7 +18,7 @@ export const About = () => {
             />
           </Card>
         </div>
-        <div className="md:col-span-3 text-cyber-text-secondary text-lg space-y-4">
+        <div className="md:col-span-3 text-lg space-y-4">
 <p>
           gm.
 I’m free4fun.

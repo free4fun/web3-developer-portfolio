@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../../constants';
+import { useActiveSection } from '../../hooks/useActiveSection';
 
 export const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
+    const activeSection = useActiveSection(
+    NAV_LINKS.map((link) => link.href.substring(1))
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,11 +32,20 @@ export const Header = () => {
             <a
               key={link.name}
               href={link.href}
-              className="font-mono text-cyber-text-primary hover:text-cyber-primary transition-colors duration-300 relative group"
+               className={`font-mono transition-colors duration-300 relative group ${
+                activeSection === link.href.substring(1)
+                  ? 'text-cyber-primary'
+                  : 'text-cyber-text-primary hover:text-cyber-primary'
+              }`}
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+  <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-cyber-primary transition-all duration-300 ${
+                  activeSection === link.href.substring(1)
+                    ? 'w-full'
+                    : 'w-0 group-hover:w-full'
+                }`}
+              ></span>            </a>
           ))}
         </div>
       </nav>
