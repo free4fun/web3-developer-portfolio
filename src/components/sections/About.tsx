@@ -12,8 +12,8 @@ export const About = () => {
         <div className="md:col-span-2">
           <Card key="about-card" className="p-0 overflow-hidden group">
             <img 
-              src="https://picsum.photos/seed/avatar/400/500" 
-              alt="Alex Doe Portrait" 
+              src="images/free4fun.webp" 
+              alt="free4fun Portrait" 
               className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
             />
           </Card>

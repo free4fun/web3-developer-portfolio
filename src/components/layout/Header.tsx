@@ -25,7 +25,7 @@ export const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#" className="text-2xl font-bold font-mono text-cyber-primary hover:text-cyber-accent transition-colors duration-300 animate-text-glow">
-          A_D.
+          free4fun
         </a>
         <div className="hidden md:flex items-center space-x-8">
           {NAV_LINKS.map((link) => (

@@ -78,9 +78,9 @@ export const PROJECTS_DATA: Project[] = [
       'A platform that automatically moves user funds between different DeFi lending protocols to maximize yield. ' +
       'Features a clean dashboard and transaction history.',
     tags: ['Solidity', 'React', 'Ethers.js', 'The Graph', 'Node.js'],
-    imageUrl: 'https://picsum.photos/seed/project1/600/400',
+    imageUrl: 'images/projectDefiYieldAggregator.webp',
     liveUrl: '',
-    repoUrl: 'https://github.com/user/project1',
+    repoUrl: '',
   },
   {
     title: 'Cyberpunk NFT Marketplace',
@@ -88,9 +88,9 @@ export const PROJECTS_DATA: Project[] = [
       'A futuristic NFT marketplace for generative art. Users can mint, buy, and sell unique digital assets on the ' +
       'Ethereum blockchain.',
     tags: ['Next.js', 'Solidity', 'Hardhat', 'IPFS', 'Tailwind CSS'],
-    imageUrl: 'https://picsum.photos/seed/project2/600/400',
-    liveUrl: '#',
-    repoUrl: '#',
+    imageUrl: 'images/projectMarketplaceNFT.webp',
+    liveUrl: '',
+    repoUrl: '',
   },
   {
     title: 'DAO Voting System',
@@ -98,9 +98,9 @@ export const PROJECTS_DATA: Project[] = [
       'A decentralized autonomous organization governance platform. Token holders can create and vote on proposals, ' +
       'shaping the future of the organization.',
     tags: ['React', 'Solidity', 'Snapshot', 'GraphQL', 'TypeScript'],
-    imageUrl: 'https://picsum.photos/seed/project3/600/400',
+    imageUrl: 'images/projectDAO.webp',
     repoUrl: '',
-    liveUrl: '#',
+    liveUrl: '',
   },
   {
     title: 'Real-time Oracle Network',
@@ -108,16 +108,16 @@ export const PROJECTS_DATA: Project[] = [
       'A custom oracle solution to bring off-chain data onto the blockchain securely. Used for dynamic pricing in a ' +
       'decentralized prediction market.',
     tags: ['Node.js', 'Solidity', 'Chainlink', 'WebSockets', 'PostgreSQL'],
-    imageUrl: 'https://picsum.photos/seed/project4/600/400',
+    imageUrl: 'images/projectNetworkOracle.webp',
     repoUrl: '',
     liveUrl: '',
   },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'GitHub', url: '#', icon: <Icon name="github" /> },
-  { name: 'LinkedIn', url: '#', icon: <Icon name="linkedin" /> },
-  { name: 'Twitter', url: '#', icon: <Icon name="twitter" /> },
+  { name: 'GitHub', url: 'https://www.github.com/free4fun', icon: <Icon name="github" /> },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/free4fun', icon: <Icon name="linkedin" /> },
+  { name: 'Twitter', url: 'https://www.x.com/fr334fun', icon: <Icon name="twitter" /> },
 ];
 
 export const NAV_LINKS = [

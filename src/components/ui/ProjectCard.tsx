@@ -16,7 +16,7 @@ export const ProjectCard = ({ project } : ProjectCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-cyber-surface to-transparent"></div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-cyber-primary mb-2">{project.title}</h3>
+        <h3 className="text-l sm:text-4xl font-bold text-cyber-primary mb-2">{project.title}</h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
             <span key={tag} className="text-xs font-mono bg-cyber-primary/20 text-cyber-primary px-2 py-1 rounded">
