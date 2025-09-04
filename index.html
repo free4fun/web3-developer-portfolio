@@ -8,7 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -23,24 +24,33 @@
               'cyber-text-secondary': '#A0A0A0',
             },
             fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              mono: ['Roboto Mono', 'ui-monospace', 'monospace'],
+              txt: ['Orbitron', 'sans-serif'],
+              title: ['Chakra Petch', 'ui-monospace', 'monospace'],
             },
             animation: {
-              'text-glow': 'text-glow 1.5s ease-in-out infinite alternate',
+              'text-glow-primary': 'text-glow-primary 1.5s ease-in-out infinite alternate',
+              'text-glow-secondary': 'text-glow-secondary 1.5s ease-in-out infinite alternate',
               'border-pulse': 'border-pulse 2s infinite',
               'fade-in': 'fade-in 0.5s ease-out forwards',
-              'slide-in': 'slide-in 0.5s ease-out forwards',
+              'slide-in': 'slide-in 2s ease-out forwards',
               'chat-pulse': 'chat-pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1)',
               'glitch': 'glitch 0.5s linear infinite',
               'decode-char': 'decode-char 0.8s ease-out forwards',
-              'blink': 'blink 1s step-end infinite',
-              'subtle-glitch': 'subtle-glitch 8s step-end infinite',
+              'blinks': 'blinks 1s step-end infinite',
+              'subtle-glitch': 'subtle-glitch 1s step-end infinite',
+              'subtle-glitch-3s': 'subtle-glitch 3s step-end infinite',
+              'spin': 'spin 2s linear infinite',
+              'glow-primary': 'glow-primary 1.5s ease-in-out infinite alternate',
+              'glow-secondary': 'glow-secondary 1.5s ease-in-out infinite alternate',
             },
             keyframes: {
-              'text-glow': {
+              'text-glow-primary': {
                 '0%': { textShadow: '0 0 5px rgba(0, 245, 255, 0.5), 0 0 10px rgba(0, 245, 255, 0.5)' },
                 '100%': { textShadow: '0 0 10px rgba(0, 245, 255, 1), 0 0 20px rgba(0, 245, 255, 1)' },
+              },
+              'text-glow-secondary': {
+                '0%': { textShadow: '0 0 5px rgba(255, 0, 229, 0.5), 0 0 10px rgba(255, 0, 229, 0.5)' },
+                '100%': { textShadow: '0 0 10px rgba(255, 0, 229, 1), 0 0 20px rgba(255, 0, 229, 1)' },
               },
               'border-pulse': {
                 '0%': { borderColor: 'rgba(0, 245, 255, 0.3)' },
@@ -74,7 +84,7 @@
                 'from': { opacity: 0, transform: 'translateY(20px)' },
                 'to': { opacity: 1, transform: 'translateY(0)' }
               },
-              'blink': {
+              'blinks': {
                 'from, to': { opacity: '1' },
                 '50%': { opacity: '0' },
               },
@@ -83,22 +93,45 @@
                 '10.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
                 '10.1%': { transform: 'translate(1px, -1px)', clipPath: 'polygon(0 25%, 100% 25%, 100% 26%, 0 26%)' },
                 '10.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '20.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '20.1%': { transform: 'translate(-1px, 1px)', clipPath: 'polygon(0 60%, 100% 60%, 100% 61%, 0 61%)' },
+                '20.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
                 '40.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
-                '40.1%': { transform: 'translate(-1px, 1px)', clipPath: 'polygon(0 60%, 100% 60%, 100% 61%, 0 61%)' },
+                '40.1%': { transform: 'translate(1px, -1px)', clipPath: 'polygon(0 25%, 100% 25%, 100% 26%, 0 26%)' },
                 '40.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '50.0%': { transform: 'translate(0, 0)', clipPath: 'none' },
+                '50.1%': { transform: 'translate(-1px, 1px)', clipPath: 'polygon(0 60%, 100% 60%, 100% 61%, 0 61%)' },
+                '50.2%': { transform: 'translate(0, 0)', clipPath: 'none' },
                 '100%': { transform: 'translate(0, 0)', clipPath: 'none' },
+              },
+              'spin': {
+                'from': { transform: 'rotate(0deg)' },
+                'to': { transform: 'rotate(360deg)' }
+              },
+                'glow-primary': {
+                  'from': {
+                    boxShadow: '0 0 8px #00F5FF, 0 0 16px rgba(0, 245, 255, 0.7), 0 0 32px rgba(0, 245, 255, 0.4)',
+                  },
+                  'to': {
+                    boxShadow: '0 0 16px #00F5FF, 0 0 32px rgba(0, 245, 255, 0.9), 0 0 64px rgba(0, 245, 255, 0.6)',
+                  },
+                },
+                'glow-secondary': {
+                  'from': {
+                    boxShadow: '0 0 8px #FF00B3, 0 0 16px rgba(255, 0, 179, 0.7), 0 0 32px rgba(255, 0, 179, 0.4)',
+                  },
+                  'to': {
+                    boxShadow: '0 0 16px #FF00B3, 0 0 32px rgba(255, 0, 179, 0.9), 0 0 64px rgba(255, 0, 179, 0.6)',
+                  },
+                },
               }
             }
           }
         }
-      }
     </script>
     <link rel="stylesheet" href="/src/styles/global.css">
   </head>
   <body class="bg-cyber-bg">
-      <div id="loader">
-    <div class="spinner"></div>
-  </div>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   <script type="module" src="/index.tsx"></script>

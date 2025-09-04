@@ -32,6 +32,7 @@ const ICONS: Record<string, string> = {
   prometheus: 'simple-icons:prometheus',
 
   // Social
+  telegram: 'simple-icons:telegram',
   github: 'simple-icons:github',
   linkedin: 'simple-icons:linkedin',
   twitter: 'simple-icons:x', // o 'simple-icons:twitter' si prefieres el pajarito

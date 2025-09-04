@@ -9,15 +9,32 @@ import { Projects } from './components/sections/Projects';
 import { Philosophy } from './components/sections/Philosophy';
 import { Contact } from './components/sections/Contact';
 import { CustomCursor } from './components/ui/CustomCursor';
+import { BackgroundImage } from './components/layout/BackgroundImage';
+
+
+import React, { useState, useEffect } from 'react';
 
 const App: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+    window.addEventListener('load', handleLoad);
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
 
   return (
     <div className="text-cyber-text-primary font-sans">
+      {loading && (
+        <div id="loader">
+          <div className="spinner" />
+        </div>
+      )}
+      <BackgroundImage />
       <CustomCursor />
       <CyberpunkBackground/>
       <Header />
-      <Hero />
+      <Hero loading={loading} />
       <div className="relative z-10">
         <main>
           <About />

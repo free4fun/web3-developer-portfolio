@@ -24,15 +24,17 @@ export const Header = () => {
       }`}
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold font-mono text-cyber-primary hover:text-cyber-accent transition-colors duration-300 animate-text-glow">
+        <div className='animate-subtle-glitch-3s'>
+        <a href="#" className="font-title text-2xl font-bold tracking-widest text-cyber-secondary animate-text-glow-secondary hover:animate-text-glow-primary hover:text-cyber-primary transition-colors duration-300">
           free4fun
         </a>
+        </div>
         <div className="hidden md:flex items-center space-x-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-               className={`font-mono transition-colors duration-300 relative group ${
+               className={`font-title text-xl font-bold tracking-widest transition-colors duration-300 relative group ${
                 activeSection === link.href.substring(1)
                   ? 'text-cyber-primary'
                   : 'text-cyber-text-primary hover:text-cyber-primary'

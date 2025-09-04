@@ -6,11 +6,11 @@ import { SectionTitle } from '../ui/SectionTitle';
 export const Contact = () => {
 
   return (
-    <Section id="contact" className="bg-cyber-surface/50">
+    <Section id="contact" className="bg-cyber-surface/30">
       <div className="text-center">
         <SectionTitle title="Connect" />
-        <p className="mb-8 max-w-2xl mx-auto">
-          Open to new projects, bold ideas, and opportunities to build ambitious visions. Let’s connect.
+        <p className="mb-8 max-w-3xl mx-auto text-lg font-txt tracking-widest">
+          Open to new code, bold visions, and networks that break the old systems. Let’s connect and build the decentralized future.
         </p>
         <div className="flex justify-center items-center space-x-8">
           {SOCIAL_LINKS.map((link) => (
@@ -26,8 +26,8 @@ export const Contact = () => {
             </a>
           ))}
         </div>
-        <div className="mt-12 font-mono text-cyber-secondary">
-          <a href="mailto:gm@free4fun.dev" className="hover:underline">gm@free4fun.dev</a>
+        <div className="mt-12 text-lg font-title tracking-widest text-cyber-secondary animate-text-glow-secondary">
+          <a href="mailto:gm@free4fun.dev">gm@free4fun.dev</a>
         </div>
       </div>
     </Section>

@@ -16,23 +16,23 @@ export const ProjectCard = ({ project } : ProjectCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-cyber-surface to-transparent"></div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-l sm:text-4xl font-bold text-cyber-primary mb-2">{project.title}</h3>
+        <h3 className="text-l sm:text-4xl font-bold text-lg font-title tracking-widest text-cyber-primary mb-2">{project.title}</h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
-            <span key={tag} className="text-xs font-mono bg-cyber-primary/20 text-cyber-primary px-2 py-1 rounded">
+            <span key={tag} className="text-xs font-txt tracking-widest bg-cyber-primary/20 text-cyber-primary px-2 py-1 rounded">
               {tag}
             </span>
           ))}
         </div>
-        <p className="flex-grow mb-6">{project.description}</p>
+        <p className="flex-grow mb-6 text-lg font-txt tracking-widest">{project.description}</p>
         <div className="mt-auto flex items-center space-x-4">
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyber-secondary hover:underline flex items-center gap-2">Live Demo</a>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-lg text-cyber-secondary animate-text-glow-secondary flex items-center gap-2 hover:text-cyber-primary hover:animate-text-glow-primary">Live Demo</a>
           )}
-          {!project.liveUrl && <span className="text-cyber-primary">Coming Soon</span>}
+          {!project.liveUrl && <span className="text-cyber-primary text-lg font-txt tracking-widest">Coming Soon</span>}
 
           {typeof project.repoUrl === 'string' && project.repoUrl.trim() !== '' && (
-            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" className="text-cyber-primary hover:text-cyber-secondary transition-colors duration-300">
+            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" className="text-lg font-txt tracking-widest text-cyber-primary animate-text-glow-primary hover:text-cyber-secondary transition-colors duration-300">
               <Icon name="github" className="h-6 w-6" />
             </a>
           )}

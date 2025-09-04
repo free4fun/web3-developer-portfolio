@@ -25,27 +25,11 @@
   box-shadow: 0 0 12px #00F5FF, 0 0 24px #00F5FF, 0 0 48px #00F5FF;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 8px #00F5FF, 0 0 16px rgba(0, 245, 255, 0.7), 0 0 32px rgba(0, 245, 255, 0.4);
-  }
-  to {
-    box-shadow: 0 0 16px #00F5FF, 0 0 32px rgba(0, 245, 255, 0.9), 0 0 64px rgba(0, 245, 255, 0.6);
-  }
-}
-
-
-
 /* Global CSS styles for the web3 developer portfolio */
 * {
   cursor: none !important;
 }
+
 .glitch-container:hover .glitch {
   animation: glitch 0.3s linear infinite;
 }
@@ -80,11 +64,18 @@
   animation: decode-char 0.8s ease-out forwards;
   display: inline-block;
 }
-.typing-cursor::after {
+.typing-cursor-primary::after {
   content: '_';
   color: #00F5FF; /* neon cyan */
-  animation: blink 1s step-end infinite;
+  animation: blinks 1s step-end infinite;
 }
+
+.typing-cursor-secondary::after {
+  content: '_';
+  color: #FF00E5; /* neon magenta */
+  animation: blinks 1s step-end infinite;
+}
+
 .glitch-overlay {
   position: absolute;
   top: 0;
@@ -137,3 +128,9 @@
 @keyframes glitchSweep { 0%,96%,100%{opacity:0} 97%{opacity:.9;transform:translateY(-1px)} 98%{opacity:.4;transform:translateY(2px)} 99%{opacity:.8;transform:translateY(-1px)} }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce){ .fixed.inset-0 > div { animation: none !important } }
+
+@keyframes halosDrift {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(30px) scale(1.03) rotate(2deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}

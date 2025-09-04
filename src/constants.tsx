@@ -7,7 +7,7 @@ export const SKILLS_DATA: { [key: string]: Skill[] } = {
     { name: 'React', icon: <Icon name="react" /> },
     { name: 'TypeScript', icon: <Icon name="typescript" /> },
     { name: 'Next.js', icon: <Icon name="nextjs" /> },
-    { name: 'Tailwind CSS', icon: <Icon name="tailwind" /> },
+    { name: 'Tailwind', icon: <Icon name="tailwind" /> },
   ],
 'Backend': [
   { name: 'Node.js', icon: <Icon name="nodejs" /> },
@@ -79,8 +79,8 @@ export const PROJECTS_DATA: Project[] = [
       'Features a clean dashboard and transaction history.',
     tags: ['Solidity', 'React', 'Ethers.js', 'The Graph', 'Node.js'],
     imageUrl: 'images/projectDefiYieldAggregator.webp',
-    liveUrl: '',
-    repoUrl: '',
+    liveUrl: '#',
+    repoUrl: '#',
   },
   {
     title: 'Cyberpunk NFT Marketplace',
@@ -89,7 +89,7 @@ export const PROJECTS_DATA: Project[] = [
       'Ethereum blockchain.',
     tags: ['Next.js', 'Solidity', 'Hardhat', 'IPFS', 'Tailwind CSS'],
     imageUrl: 'images/projectMarketplaceNFT.webp',
-    liveUrl: '',
+    liveUrl: '#',
     repoUrl: '',
   },
   {
@@ -100,7 +100,7 @@ export const PROJECTS_DATA: Project[] = [
     tags: ['React', 'Solidity', 'Snapshot', 'GraphQL', 'TypeScript'],
     imageUrl: 'images/projectDAO.webp',
     repoUrl: '',
-    liveUrl: '',
+    liveUrl: '#',
   },
   {
     title: 'Real-time Oracle Network',
@@ -115,6 +115,7 @@ export const PROJECTS_DATA: Project[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
+  { name: 'Telegram', url: 'https://t.me/fr334fun', icon: <Icon name="telegram" /> },
   { name: 'GitHub', url: 'https://www.github.com/free4fun', icon: <Icon name="github" /> },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/free4fun', icon: <Icon name="linkedin" /> },
   { name: 'Twitter', url: 'https://www.x.com/fr334fun', icon: <Icon name="twitter" /> },

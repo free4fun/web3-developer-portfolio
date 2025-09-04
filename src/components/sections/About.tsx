@@ -18,9 +18,9 @@ export const About = () => {
             />
           </Card>
         </div>
-        <div className="md:col-span-3 text-lg space-y-4">
+        <div className="md:col-span-3 text-lg space-y-4 font-txt tracking-widest">
 <p>
-          gm.
+gm.
 I’m free4fun.
 Fullstack developer.
 White belt in the arts of blockchain.</p>
