@@ -18,7 +18,7 @@ export const About = () => {
             />
           </Card>
         </div>
-        <div className="md:col-span-3 text-lg space-y-4 font-txt tracking-widest">
+        <div className="md:col-span-3 text-lg space-y-4 font-txt tracking-widest text-white">
 <p>
 gm.
 I’m free4fun.
