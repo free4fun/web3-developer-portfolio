@@ -18,7 +18,7 @@ export const InfoCard = ({ item, animationDelay } : InfoCardProps) => {
         {React.cloneElement(item.icon, { className: "h-10 w-10" })}
       </div>
       <h3 className="text-xl font-bold font-title tracking-widest text-cyber-primary mb-2">{item.title}</h3>
-      <p className="flex-grow text-lg font-txt tracking-widest">{item.description}</p>
+      <p className="flex-grow text-lg font-txt tracking-widest text-white">{item.description}</p>
     </Card>
   );
 };

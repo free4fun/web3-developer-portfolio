@@ -24,7 +24,7 @@ export const ProjectCard = ({ project } : ProjectCardProps) => {
             </span>
           ))}
         </div>
-        <p className="flex-grow mb-6 text-lg font-txt tracking-widest">{project.description}</p>
+        <p className="flex-grow mb-6 text-lg font-txt tracking-widest text-white">{project.description}</p>
         <div className="mt-auto flex items-center space-x-4">
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-lg text-cyber-secondary animate-text-glow-secondary flex items-center gap-2 hover:text-cyber-primary hover:animate-text-glow-primary">Live Demo</a>

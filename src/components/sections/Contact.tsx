@@ -9,7 +9,7 @@ export const Contact = () => {
     <Section id="contact" className="bg-cyber-surface/30">
       <div className="text-center">
         <SectionTitle title="Connect" />
-        <p className="mb-8 max-w-3xl mx-auto text-lg font-txt tracking-widest">
+        <p className="mb-8 max-w-3xl mx-auto text-lg font-txt tracking-widest text-white">
           Open to new code, bold visions, and networks that break the old systems. Let’s connect and build the decentralized future.
         </p>
         <div className="flex justify-center items-center space-x-8">
