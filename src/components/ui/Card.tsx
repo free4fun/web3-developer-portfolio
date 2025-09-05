@@ -31,7 +31,7 @@ export const Card = ({ children, className = '', style: propStyle }: CardProps) 
 
   return (
     <div
-      className={`bg-cyber-surface/70 backdrop-blur-sm border border-cyber-secondary/20 rounded-lg p-6 shadow-lg transition-all duration-300 hover:border-cyber-secondary/50 hover:shadow-cyber-secondary/20 ${className}`}
+  className={`bg-cyber-surface/70 backdrop-blur-sm border border-cyber-secondary/60 rounded-lg p-6 shadow-lg transition-all duration-300 hover:border-cyber-secondary/80 hover:-translate-y-2 hover:shadow-[0_0_20px_theme(colors.cyber-secondary/70)] ${className}`}
       style={{ ...propStyle, ...hoverStyle }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

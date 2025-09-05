@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Section } from '../layout/Section';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
 import { Scanlines } from '../ui/Scanlines';
 
