@@ -19,10 +19,16 @@ import React, { useState, useEffect } from 'react';
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
+    // Funciona en desktop y mobile: oculta loader cuando el DOM está listo
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      setLoading(false);
+    } else {
+      const onReady = () => setLoading(false);
+      document.addEventListener('DOMContentLoaded', onReady);
+      return () => document.removeEventListener('DOMContentLoaded', onReady);
+    }
   }, []);
 
 
