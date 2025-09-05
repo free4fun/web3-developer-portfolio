@@ -1,3 +1,4 @@
+import { gtmPush } from './lib/gtm';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { CyberpunkBackground } from './components/layout/CyberpunkBackground';
@@ -22,6 +23,12 @@ const App: React.FC = () => {
     window.addEventListener('load', handleLoad);
     return () => window.removeEventListener('load', handleLoad);
   }, []);
+
+
+  useEffect(() => {
+    gtmPush({ event: 'page_view', page_path: location.pathname + location.hash, page_title: document.title });
+  }, []);
+
 
   return (
     <div className="text-cyber-text-primary font-sans">
