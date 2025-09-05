@@ -42,7 +42,7 @@ const App: React.FC = () => {
       <CustomCursor />
       <CyberpunkBackground/>
       <Header />
-      <Hero loading={loading} />
+      <Hero/>
       <div className="relative z-10">
         <main>
           <About />

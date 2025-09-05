@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Section } from '../layout/Section';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
 import { Scanlines } from '../ui/Scanlines';
 
-type HeroProps = { loading?: boolean };
-export const Hero = ({ loading }: HeroProps) => {
+export const Hero = () => {
     const [title, setTitle] = useState<React.ReactNode[]>([]);
     const [visible, setVisible] = useState(false);
     const [hoverStyle, setHoverStyle] = useState<React.CSSProperties>({});
     const name = "free4fun";
     const fullSubtitle = "Whitebelt Blockchain Developer";
     const typedSubtitle = useTypingEffect(fullSubtitle, 75, 1500);
-
-    useEffect(() => {
-        if (loading === false) {
-            setTimeout(() => setVisible(true), 500);
-        }
-    }, [loading]);
 
     useEffect(() => {
         const chars = name.split('').map((char, index) => (
