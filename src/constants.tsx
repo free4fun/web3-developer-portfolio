@@ -11,8 +11,8 @@ export const SKILLS_DATA: { [key: string]: Skill[] } = {
 'Backend': [
   { name: 'Node.js', icon: <Icon name="nodejs" /> },
   { name: 'TypeORM', icon: <Icon name="typeorm" /> },
-  { name: 'PostgreSQL', icon: <Icon name="postgres" /> },
   { name: 'IPFS', icon: <Icon name="ipfs" /> },
+  { name: 'PostgreSQL', icon: <Icon name="postgres" /> },
   ],
   'Web3 & Blockchain': [
     { name: 'Solidity', icon: <Icon name="solidity" /> },
@@ -78,8 +78,8 @@ export const PROJECTS_DATA: Project[] = [
       'Features a clean dashboard and transaction history.',
     tags: ['Solidity', 'React', 'Ethers.js', 'The Graph', 'Node.js'],
     imageUrl: 'images/projectDefiYieldAggregator.webp',
-    liveUrl: '#',
-    repoUrl: '#',
+    liveUrl: '',
+    repoUrl: '',
   },
   {
     title: 'Cyberpunk NFT Marketplace',
@@ -88,7 +88,7 @@ export const PROJECTS_DATA: Project[] = [
       'Ethereum blockchain.',
     tags: ['Next.js', 'Solidity', 'Hardhat', 'IPFS', 'Tailwind CSS'],
     imageUrl: 'images/projectMarketplaceNFT.webp',
-    liveUrl: '#',
+    liveUrl: '',
     repoUrl: '',
   },
   {
@@ -99,7 +99,7 @@ export const PROJECTS_DATA: Project[] = [
     tags: ['React', 'Solidity', 'Snapshot', 'GraphQL', 'TypeScript'],
     imageUrl: 'images/projectDAO.webp',
     repoUrl: '',
-    liveUrl: '#',
+    liveUrl: '',
   },
   {
     title: 'Real-time Oracle Network',
