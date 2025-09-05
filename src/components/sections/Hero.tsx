@@ -2,13 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
 import { Scanlines } from '../ui/Scanlines';
 
-export const Hero = () => {
+type HeroProps = { loading?: boolean };
+export const Hero = ({ loading }: HeroProps) => {
     const [title, setTitle] = useState<React.ReactNode[]>([]);
     const [visible, setVisible] = useState(false);
     const [hoverStyle, setHoverStyle] = useState<React.CSSProperties>({});
     const name = "free4fun";
     const fullSubtitle = "Whitebelt Blockchain Developer";
     const typedSubtitle = useTypingEffect(fullSubtitle, 75, 1500);
+
+    useEffect(() => {
+        if (loading === false) {
+            setTimeout(() => setVisible(true), 500);
+        }
+    }, [loading]);
 
     useEffect(() => {
         const chars = name.split('').map((char, index) => (
@@ -55,14 +62,14 @@ export const Hero = () => {
         <section id="hero" className="min-h-screen flex items-center justify-center text-center p-4 relative overflow-hidden">
             <div className="relative z-10 w-full max-w-4xl" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={hoverStyle}>
                 <Scanlines />
-                <div className="relative border border-cyber-primary/10 bg-cyber-bg/20 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-cyber-primary/10">
+                <div className="relative border border-cyber-primary/10 bg-cyber-bg/20 backdrop-blur-sm p-4 md:p-12 rounded-lg shadow-2xl shadow-cyber-primary/10">
                     <HudCorner position="top-0 left-0"/>
                     <HudCorner position="top-0 right-0"/>
                     <HudCorner position="bottom-0 left-0"/>
                     <HudCorner position="bottom-0 right-0"/>
-                    <h1 className={`font-title text-5xl font-bold tracking-widest animate-subtle-glitch text-white md:text-7xl lg:text-8xl transition-opacisty duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{title}</h1>
-                    <p className={`mt-4 font-title text-2xl font-bold tracking-widest text-cyber-secondary md:text-3xl animate-text-glow-secondary h-8`}>{typedSubtitle}{typedSubtitle.length > 0 && <span className="typing-cursor-secondary duration-1000 animate-blinks"></span>}</p>
-                    <p className={`mt-6 font-txt text-lg text-white tracking-widest transition-opacity duration-1000 ${typedSubtitle.length === fullSubtitle.length ? 'opacity-100' : 'opacity-0'}`}>Eternal rover on data streams, seeking signal in noise and beauty in the glitch. I drive futures of open code and free networks to build new realities.</p>
+                    <h1 className={`font-title text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold tracking-widest animate-subtle-glitch text-white transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{title}</h1>
+                    <p className={`mt-4 font-title text-xl sm:text-2xl font-bold tracking-widest text-cyber-secondary md:text-3xl animate-text-glow-secondary`}>{typedSubtitle}{typedSubtitle.length > 0 && <span className="typing-cursor-secondary duration-1000 animate-blinks"></span>}</p>
+                    <p className={`mt-6 font-txt text-base sm:text-lg text-white tracking-widest transition-opacity duration-1000 break-words ${typedSubtitle.length === fullSubtitle.length ? 'opacity-100' : 'opacity-0'}`}>Eternal rover on data streams, seeking signal in noise and beauty in the glitch. I drive futures of open code and free networks to build new realities.</p>
                     <div className={`mt-10 transition-opacity duration-1000 ${typedSubtitle.length === fullSubtitle.length ? 'opacity-100' : 'opacity-0'}`}
                          style={{ transitionDelay: typedSubtitle.length === fullSubtitle.length ? '0.5s' : '0s' }}>
                         <a href="#projects" className="animate-glow-primary font-txt tracking-widest text-lg inline-block px-8 py-4 font-bold text-cyber-bg bg-cyber-primary rounded-md ease-in-out hover:bg-cyber-secondary hover:animate-glow-secondary hover:shadow-lg hover:shadow-cyber-secondary/30 transform hover:-translate-y-1 group relative overflow-hidden">
