@@ -11,6 +11,7 @@ import { Philosophy } from './components/sections/Philosophy';
 import { Contact } from './components/sections/Contact';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { BackgroundImage } from './components/layout/BackgroundImage';
+import './styles/global.css'
 
 
 import React, { useState, useEffect } from 'react';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Project, Skill, SocialLink, CoreValueItem, PhilosophyItem } from './types';
 import { Icon } from './components/ui/Icon';
 
