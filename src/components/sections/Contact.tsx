@@ -12,7 +12,7 @@ export const Contact = () => {
         <p className="mb-8 max-w-3xl mx-auto text-lg font-txt tracking-widest text-white">
           Open to new code, bold visions, and networks that break the old systems. Let’s connect and build the decentralized future.
         </p>
-        <div className="flex justify-center items-center space-x-8">
+        <div className="flex justify-center items-center space-x-12">
           {SOCIAL_LINKS.map((link) => (
             <a
               key={link.name}
@@ -20,9 +20,9 @@ export const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.name}
-              className="text-cyber-text-secondary hover:text-cyber-primary transition-transform duration-300 hover:scale-125"
+              className="text-cyber-primary hover:text-cyber-secondary transition-transform duration-300 hover:scale-125"
             >
-              {React.cloneElement(link.icon, { className: "h-8 w-8" })}
+              {React.cloneElement(link.icon, { className: "h-10 w-10" })}
             </a>
           ))}
         </div>

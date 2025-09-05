@@ -8,8 +8,8 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project } : ProjectCardProps) => {
   return (
-    <Card className="flex flex-col animate-slide-in p-0 overflow-hidden">
-      <div className="relative overflow-hidden group">
+    <Card className="flex flex-col animate-slide-in p-0 overflow-hidden group">
+      <div className="relative overflow-hidden">
         <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
       </div>
       <div className="p-6 flex flex-col flex-grow">
